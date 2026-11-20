@@ -46,7 +46,7 @@ const dishes = [
     restaurant: 'Mama T’s Kitchen',
     cuisine: 'Nigerian',
     category: 'Rice',
-    image: 'image/jollof Rice With Grilled Chicken.jpg'
+    image: 'image/Jollof Rice with Grilled Chicken.jpg'
   },
   {
     name: 'Egusi & pounded yam',
@@ -55,7 +55,7 @@ const dishes = [
     restaurant: 'Mama T’s Kitchen',
     cuisine: 'Nigerian',
     category: 'Swallows',
-    image: 'image/Fufu And Egusi Soup.jpg'
+    image: 'image/Fufu and Egusi soup.jpg'
   },
   {
     name: 'Spicy beef suya',
@@ -91,7 +91,7 @@ const dishes = [
     restaurant: 'The Global Table',
     cuisine: 'International',
     category: 'Burgers',
-    image: 'image/classic burger.jpg'
+    image: 'image/Classic burger.jpg'
   },
   {
     name: 'Creamy pasta',
@@ -100,7 +100,7 @@ const dishes = [
     restaurant: 'The Global Table',
     cuisine: 'International',
     category: 'Pasta',
-    image: 'image/creamy pasta.jpg'
+    image: 'image/Creamy Pasta.jpg'
   },
   {
     name: 'Sushi selection',
@@ -109,7 +109,7 @@ const dishes = [
     restaurant: 'The Global Table',
     cuisine: 'International',
     category: 'Sushi',
-    image: 'image/sushi.jpg'
+    image: 'image/Sushi.jpg'
   }
  ];
 // Additional menu items for the restaurant pages.
@@ -130,7 +130,7 @@ const moreDishes = [
   4500,
   2,
   'Ghanaian',
-  'image/Gari foto.jpg'
+  'image/Gari Foto.jpg'
 ],
 
 [
@@ -274,7 +274,7 @@ const moreDishes = [
   3200,
   0,
   'Swallows',
-  'image/Pounded yam.jpg'
+  'image/pounded yam.jpg'
 ],
 
      [
@@ -283,7 +283,7 @@ const moreDishes = [
   2100,
   0,
   'Sides',
-  'image/Moi Moi.jpg'
+  'image/moi moi.jpg'
 ],
      [
   'Akara',
@@ -299,7 +299,7 @@ const moreDishes = [
   3000,
   0,
   'Meals',
-  'image/yam.jpg'
+  'image/Yam.jpg'
 ],
      [
   'Beans and plantain',
@@ -307,7 +307,7 @@ const moreDishes = [
   2800,
   0,
   'Meals',
-  'image/Beans with Plantain.jpg'
+  'image/beans with Plantain.jpg'
 ],
      [
   'Abacgha',
@@ -339,7 +339,7 @@ const moreDishes = [
   3600,
   1,
   'Grills',
-  'image/Peppered meat.jpg'
+  'image/peppered Meat.jpg'
 ],
      [
   'Grilled fish',
@@ -363,7 +363,7 @@ const moreDishes = [
   1800,
   1,
   'Snacks',
-  'image/Meat pie.jpg'
+  'image/meat pie.jpg'
 ],
      [
   'Nkwobi',
@@ -395,7 +395,7 @@ const moreDishes = [
   3500,
   1,
   'Meals',
-  'image/Bole and fish.jpg'
+  'image/bole and Fish.jpg'
 ],
 
   ['Zobo', 'A refreshing hibiscus drink.', 1000, 1, 'Drinks'],
@@ -405,7 +405,7 @@ const moreDishes = [
   1000,
   1,
   'Drinks',
-  'image/Kuku.jpg'
+  'image/kuku.jpg'
 ],
      [
   'Chapman',
@@ -421,7 +421,7 @@ const moreDishes = [
   1500,
   1,
   'Drinks',
-  'image/Fresh fruit juice.jpg'
+  'image/fresh fruit juice.jpg'
 ],
      [
   'Lasagna',
@@ -431,14 +431,21 @@ const moreDishes = [
   'Italian',
   'image/Lasagna.jpg'
 ],
-  ['Risotto', 'Creamy Italian-style rice.', 5600, 2, 'Italian'],
+
+   [
+  'Risotto',
+  'Creamy Italian-stlye rice.',
+  5600,
+  2,
+  'Italian',
+  'image/Risotto.jpg'
      [
   'French Fries',
   'Golden fried potato chips.',
   4500,
   2,
   'American',
-  'image/French fries.jpg'
+  'image/French Fries.jpg'
 ],
      [
   'Sandwich',
@@ -446,7 +453,7 @@ const moreDishes = [
   5000,
   2,
   'American',
-  'image/sandwiches.jpg'
+  'image/Sandwiches.jpg'
 ],
      [
   'Fried chicken',
@@ -454,7 +461,7 @@ const moreDishes = [
   5200,
   2,
   'American',
-  'image/Fried chicken.jpg'
+  'image/Fried Chicken.jpg'
 ],
   ['Noodles', 'Seasoned noodles with vegetables.', 3500, 2, 'Asian'],
      [
@@ -471,7 +478,7 @@ const moreDishes = [
   3798,
   2,
   'Asian',
-  'image/Stir fried rice.jpg'
+  'image/stir fried rice.jpg'
 ],
     [
   'Shawarma',
@@ -479,7 +486,7 @@ const moreDishes = [
   5500,
   2,
   'International',
-  'image/Shawarma.jpg'
+  'image/shawarma.jpg'
 ],
     [
   'Tacos',
@@ -495,7 +502,7 @@ const moreDishes = [
   4200,
   2,
   'International',
-  'image/Salad.jpg'
+  'image/salad.jpg'
 ],
 
   ].map(([
