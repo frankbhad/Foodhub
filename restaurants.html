@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Restaurants | TARABAEat</title>
+<link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="restaurants.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+
+    <nav
+      class="container directory-nav"
+      aria-label="Main navigation"
+    >
+
+      <a class="logo" href="index.html">
+        TARABA<span>Eat</span><i>.</i>
+      </a>
+
+      <a href="index.html">
+        ← Back to home
+      </a>
+<a class="cart-nav" href="cart.html">
+  Cart <span data-cart-count>0</span>
+</a>
+    </nav>
+
+  </header>
+
+
+  <main class="container directory-main">
+
+    <p class="eyebrow">
+      FIND YOUR NEXT FAVOURITE
+    </p>
+
+    <h1>
+      Good food starts <em>here.</em>
+    </h1>
+
+    <p class="directory-intro">
+      Explore our kitchens and see what’s on their menus.
+    </p>
+
+<!-- Search and filter controls -->
+<section
+  class="discovery-filters"
+  aria-label="Search and filter restaurants"
+>
+  <label>
+    Search restaurants or dishes
+
+    <input
+      id="directory-search"
+      type="search"
+      placeholder="Search for your favourite"
+      autocomplete="off"
+    >
+  </label>
+
+  <label>
+    Cuisine
+
+    <select id="filter-cuisine">
+      <option value="all">All cuisines</option>
+      <option value="Nigerian">Nigerian</option>
+      <option value="International">International</option>
+    </select>
+  </label>
+
+  <label>
+    Lowest menu price
+
+    <select id="filter-price">
+      <option value="all">Any price</option>
+      <option value="2000">Up to ₦2,000</option>
+      <option value="4000">Up to ₦4,000</option>
+      <option value="6000">Up to ₦6,000</option>
+    </select>
+  </label>
+
+  <label>
+    Minimum rating
+
+    <select id="filter-rating">
+      <option value="all">Any rating</option>
+      <option value="4.5">4.5 and above</option>
+      <option value="4.7">4.7 and above</option>
+      <option value="4.8">4.8 and above</option>
+    </select>
+  </label>
+
+  <label>
+    Maximum delivery time
+
+    <select id="filter-time">
+      <option value="all">Any time</option>
+      <option value="35">Up to 35 minutes</option>
+      <option value="40">Up to 40 minutes</option>
+      <option value="45">Up to 45 minutes</option>
+    </select>
+  </label>
+
+  <label>
+    Sort by
+
+    <select id="sort-restaurants">
+      <option value="popular">Popular</option>
+      <option value="rating">Highest rating</option>
+      <option value="fee">Lowest delivery fee</option>
+    </select>
+  </label>
+
+  <button id="clear-filters" type="button">
+    Clear filters
+  </button>
+</section>
+
+<p
+  id="directory-status"
+  class="directory-status"
+  aria-live="polite"
+></p>
+    <!-- JavaScript displays the restaurant cards here -->
+    <div id="directory-list" class="directory-grid"></div>
+
+    <p class="directory-note">
+      Restaurants, ratings, delivery fees and times.
+    </p>
+
+  </main>
+
+
+  <footer class="site-footer">
+
+    <div class="container footer-bottom">
+      © 2026 TARABAEat. Eat Good And Eat Well.
+    </div>
+
+  </footer>
+
+</body>
+</html>

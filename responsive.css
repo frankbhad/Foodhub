@@ -1,0 +1,156 @@
+/* =========================================
+   Tablets
+========================================= */
+
+@media (max-width: 850px) {
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .hero-copy {
+    padding: 40px 7%;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .dish-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================
+   Mobile phones
+========================================= */
+
+@media (max-width: 620px) {
+
+  html {
+    scroll-padding-top: 135px;
+  }
+
+  .navigation {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo login"
+      "links links";
+    gap: 0 10px;
+    padding-top: 12px;
+  }
+
+  .navigation .logo {
+    grid-area: logo;
+  }
+
+  .login-button {
+    grid-area: login;
+  }
+
+  .nav-links {
+    grid-area: links;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 0;
+    font-size: 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    padding: 38px 24px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .hero-image {
+    min-height: 230px;
+  }
+
+  .section {
+    padding-top: 55px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading > p {
+    margin-top: 8px;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dish-grid {
+    gap: 12px;
+  }
+
+  .dish-photo {
+    height: 135px;
+  }
+
+  .dish-info {
+    padding: 12px;
+  }
+
+  .dish-info h3 {
+    font-size: 14px;
+  }
+
+  .feature-grid,
+  .steps,
+  .quote-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer {
+    margin-top: 55px;
+    padding: 25px;
+  }
+
+  .offer > span {
+    font-size: 40px;
+  }
+
+  .final-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* Extra-small phones */
+
+@media (max-width: 360px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .nav-links {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+}

@@ -1,0 +1,509 @@
+/* =========================================
+   Hero section
+========================================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  min-height: 470px;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #e9eee5;
+}
+
+.hero-copy {
+  padding: 65px 8%;
+  align-self: center;
+}
+
+.hero-copy .eyebrow span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.hero h1 {
+  max-width: 540px;
+  margin: 20px 0;
+  color: var(--color-primary);
+  font-size: clamp(42px, 5vw, 65px);
+  line-height: 1.03;
+  letter-spacing: -3px;
+}
+
+.hero h1 em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.hero-copy > p:not(.eyebrow):not(.hero-note) {
+  max-width: 410px;
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+.hero-image {
+  min-height: 420px;
+  background: #d7e4d5;
+}
+
+.hero-tag {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1;
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hero-tag b {
+  color: var(--color-accent);
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+
+/* =========================================
+   Search
+========================================= */
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 430px;
+  margin: 25px 0 19px;
+  padding: 6px 6px 6px 15px;
+  background: white;
+  border-radius: 30px;
+}
+
+.search-form > span {
+  font-size: 24px;
+  line-height: 1;
+  color: var(--color-muted);
+}
+
+.search-form input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 13px;
+}
+
+.search-form button {
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 30px;
+  background: var(--color-accent);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.search-form button span {
+  margin-left: 7px;
+}
+
+.text-link {
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.text-link span {
+  color: var(--color-accent);
+  margin-left: 5px;
+}
+
+.hero-note {
+  margin: 32px 0 0;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.hero-note strong {
+  color: var(--color-accent);
+}
+
+
+/* =========================================
+   Food categories
+========================================= */
+
+.categories-section {
+  padding-top: 55px;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category {
+  padding: 10px 17px;
+  border: 1px solid #dce4db;
+  border-radius: 25px;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.category.active,
+.category:hover {
+  color: white;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+
+/* =========================================
+   Restaurant cards
+========================================= */
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.restaurant-card,
+.dish-card {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  background: white;
+}
+
+.restaurant-photo {
+  height: 165px;
+}
+
+.restaurant-info,
+.dish-info {
+  padding: 17px;
+}
+
+.restaurant-info h3,
+.dish-info h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.restaurant-info p,
+.dish-info p {
+  margin: 0 0 10px;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.restaurant-meta {
+  color: #52695c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   Dish cards
+========================================= */
+
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dish-photo {
+  height: 170px;
+}
+
+.dish-info p {
+  min-height: 38px;
+}
+
+.dish-price {
+  color: var(--color-accent);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.dish-restaurant {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.search-status,
+.phase-note {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.search-status:empty {
+  display: none;
+}
+
+
+/* =========================================
+   Cuisine feature cards
+========================================= */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.feature {
+  min-height: 235px;
+  padding: 32px;
+  border-radius: var(--card-radius);
+}
+
+.feature h2 {
+  margin: 12px 0;
+}
+
+.feature p:not(.eyebrow) {
+  font-size: 13px;
+}
+
+.feature a {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.feature-green {
+  background: var(--color-primary);
+  color: #d0e1d5;
+}
+
+.feature-green h2 {
+  color: white;
+}
+
+.feature-peach {
+  background: #f7e7d9;
+}
+
+.feature-peach p:not(.eyebrow) {
+  color: var(--color-muted);
+}
+
+
+/* =========================================
+   Offer
+========================================= */
+
+.offer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 72px;
+  padding: 34px;
+  border-radius: var(--card-radius);
+  background: #f5eee3;
+}
+
+.offer h2 {
+  margin-bottom: 8px;
+}
+
+.offer p:not(.eyebrow),
+.offer small {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.offer > span {
+  color: #e4aa88;
+  font-size: 70px;
+}
+
+
+/* =========================================
+   How it works
+========================================= */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.steps article {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  background: white;
+}
+
+.steps span {
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.steps h3 {
+  margin: 18px 0 8px;
+  color: var(--color-primary);
+  font-size: 17px;
+}
+
+.steps p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.phase-note {
+  margin-top: 12px;
+}
+
+
+/* =========================================
+   Testimonials
+========================================= */
+
+.testimonials {
+  margin-top: 75px;
+  padding: 65px 0;
+  background: #ebf0e9;
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+blockquote {
+  margin: 0;
+  padding: 25px;
+  border-radius: var(--card-radius);
+  background: white;
+  color: var(--color-primary);
+  font-size: 17px;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 15px;
+  color: var(--color-muted);
+  font-size: 11px;
+  font-style: normal;
+}
+
+
+/* =========================================
+   Final call to action
+========================================= */
+
+.final-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.final-cta h2 {
+  margin-bottom: 8px;
+}
+
+.final-cta p:not(.eyebrow) {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+
+/* =========================================
+   Login pop-up
+========================================= */
+
+#login-dialog {
+  width: min(420px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  color: var(--color-text);
+}
+
+#login-dialog::backdrop {
+  background: #142d22ad;
+}
+
+.login-panel {
+  position: relative;
+  padding: 30px;
+}
+
+.login-panel h2 {
+  margin: 0 0 10px;
+}
+
+.login-panel > p:not(.eyebrow) {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.close-login {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  border: 0;
+  background: transparent;
+  font-size: 27px;
+}
+
+.demo-note {
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff1e8;
+}
+
+.login-panel label {
+  display: block;
+  margin: 12px 0 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.login-panel input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.login-panel .primary-button,
+.google-button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.google-button {
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 25px;
+  background: white;
+  font-weight: 700;
+}
