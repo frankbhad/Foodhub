@@ -250,7 +250,7 @@ const moreDishes = [
   1200,
   0,
   'Swallows',
-  'image/eba.jpg'
+  'image/eba.JPG'
 ],
      [
   'Fufu And Egusi Soup',
@@ -307,7 +307,7 @@ const moreDishes = [
   2800,
   0,
   'Meals',
-  'image/beans pith plantain.jpg'
+  'image/beans with plantain.jpg'
 ],
      [
   'Abacgha',
@@ -339,7 +339,7 @@ const moreDishes = [
   3600,
   1,
   'Grills',
-  'image/peppered meat.jpg'
+  'image/Peppered Meat.jpg'
 ],
      [
   'Grilled fish',
@@ -398,7 +398,7 @@ const moreDishes = [
   'image/bole and Fish.jpg'
 ],
 
-  ['Zobo', 'A refreshing hibiscus drink.', 1000, 1, 'Drinks'],
+  ['Zobo', 'A refreshing hibiscus drink.', 1000, 1, 'Drinks', 'image/Zobo.jpg'],
      [
   'Kunu',
   'A traditional grain-based drink.',
@@ -465,7 +465,7 @@ const moreDishes = [
   'American',
   'image/Fried Chicken.jpg'
 ],
-  ['Noodles', 'Seasoned noodles with vegetables.', 3500, 2, 'Asian'],
+  ['Noodles', 'Seasoned noodles with vegetables.', 3500, 2, 'Asian', 'image/Noodles.jpg'],
      [
   'Stir-fried rice',
   'Rice stir-fried with vegetables.',
