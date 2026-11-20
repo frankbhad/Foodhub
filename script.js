@@ -520,6 +520,59 @@ const moreDishes = [
     .replace(/^-|-$/g, '')}.jpg`
 }));
 
+// Load the menu before starting the website.
+async function startFoodHub() {
+  const projectUrl = 'https://ferrncngjccdkgaphnyk.supabase.co';
+  const publishableKey = 'sb_publishable_6ou-cwhfsXPuEEh5j76bVQ_h-s8niMn';
+
+  try {
+    const response = await fetch(
+      `${projectUrl.replace(/\/$/, '')}/rest/v1/foods?select=*&order=created_at.asc`,
+      {
+        headers: {
+          apikey: publishableKey
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Database returned status ${response.status}`);
+    }
+
+    const foods = await response.json();
+
+    // Keep the original homepage dish order where possible.
+    const featuredOrder = dishes.map(dish => dish.name);
+
+    const featuredFoods = foods
+      .filter(food => food.is_featured)
+      .sort((a, b) => {
+        const indexA = featuredOrder.indexOf(a.name);
+        const indexB = featuredOrder.indexOf(b.name);
+
+        return (indexA === -1 ? 999 : indexA)
+          - (indexB === -1 ? 999 : indexB);
+      });
+
+    const otherFoods = foods.filter(food => !food.is_featured);
+
+    // Update the existing arrays used by the website and cart.
+    dishes.splice(0, dishes.length, ...featuredFoods);
+    moreDishes.splice(0, moreDishes.length, ...otherFoods);
+
+  } catch (error) {
+    console.error('Could not load the food menu:', error);
+
+    const message = document.createElement('p');
+    message.textContent =
+      'The food menu could not be loaded. Please check your connection and refresh the page.';
+    message.style.cssText =
+      'padding: 16px; background: #fff3cd; color: #333; text-align: center;';
+
+    document.body.prepend(message);
+
+    return;
+  }
 
 // =========================================
 // 3. Search and filtering
@@ -591,7 +644,6 @@ function renderRestaurants() {
   hideMissingImages(restaurantList);
 }
 
-
 function renderDishes() {
   const results = dishes.filter(dish => {
     const matchesCategory =
@@ -614,36 +666,37 @@ function renderDishes() {
 
       <div
         class="dish-photo photo"
-        data-placeholder="${dish.name}"
+        data-placeholder="${escapeHtml(dish.name)}"
       >
         <img
-          src="${dish.image}"
-          alt="${dish.name}"
+          src="${escapeHtml(dish.image)}"
+          alt="${escapeHtml(dish.name)}"
           loading="lazy"
         >
       </div>
 
       <div class="dish-info">
 
-        <h3>${dish.name}</h3>
+        <h3>${escapeHtml(dish.name)}</h3>
 
-        <p>${dish.description}</p>
+        <p>${escapeHtml(dish.description)}</p>
 
         <span class="dish-price">
           ${formatPrice(dish.price)}
         </span>
 
         <span class="dish-restaurant">
-          ${dish.restaurant}
+          ${escapeHtml(dish.restaurant)}
         </span>
+
         <button
-  class="add-to-cart"
-  type="button"
-  data-add-name="${dish.name}"
-  data-add-restaurant="${dish.restaurant}"
->
-  Add to cart
-</button>
+          class="add-to-cart"
+          type="button"
+          data-add-name="${escapeHtml(dish.name)}"
+          data-add-restaurant="${escapeHtml(dish.restaurant)}"
+        >
+          Add to cart
+        </button>
 
       </div>
 
@@ -1500,7 +1553,7 @@ if (document.querySelector('#directory-search') && directoryList) {
       <div class="cart-layout">
 
         <section class="cart-panel">
-          <h2>${cart[0].restaurant}</h2>
+          <h2>${escapeHtml(cart[0].restaurant)}</h2>
 
           ${cart.map((item, index) => {
             const dish = findDish(
@@ -1678,10 +1731,10 @@ if (document.querySelector('#directory-search') && directoryList) {
         <aside class="cart-panel">
           <h2>Order summary</h2>
 
-          <p class="cart-muted">${cart[0].restaurant}</p>
+          <p class="cart-muted">${escapeHtml(cart[0].restaurant)}</p>
 
           ${cart.map(item => {
-            return `<p>${item.quantity} × ${item.name}</p>`;
+            return `<p>${item.quantity} × ${escapeHtml(item.name)}</p>`;
           }).join('')}
 
           ${totalsMarkup()}
@@ -1791,3 +1844,19 @@ if (document.querySelector('#directory-search') && directoryList) {
   renderCart();
   renderCheckout();
 })();
+}
+
+startFoodHub();
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, character => {
+    const characters = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    };
+
+    return characters[character];
+  });
+}

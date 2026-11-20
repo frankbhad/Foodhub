@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Login | TARABAEat</title>
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <main class="admin-card">
+    <h1>TARABAEat Admin</h1>
+
+    <div id="login-section">
+      <p>Sign in to manage your food menu.</p>
+
+      <form id="admin-login-form">
+        <label for="admin-email">Email</label>
+        <input
+          type="email"
+          id="admin-email"
+          autocomplete="username"
+          required
+        >
+
+        <label for="admin-password">Password</label>
+        <input
+          type="password"
+          id="admin-password"
+          autocomplete="current-password"
+          required
+        >
+
+        <button type="submit">Sign in</button>
+      </form>
+    </div>
+
+   <div id="signed-in-section" hidden>
+  <p id="signed-in-message"></p>
+
+  <button id="sign-out" type="button">Sign out</button>
+
+  <hr>
+
+  <h2 id="form-title">Add food</h2>
+
+  <form id="food-form">
+    <label for="food-name">Food name</label>
+    <input id="food-name" required>
+
+    <label for="food-description">Description</label>
+    <input id="food-description">
+
+    <label for="food-price">Price in naira</label>
+    <input
+      id="food-price"
+      type="number"
+      min="0"
+      max="2147483647"
+      step="1"
+      required
+    >
+
+    <label for="food-restaurant">Restaurant</label>
+    <select id="food-restaurant" required>
+      <option value="">Choose a restaurant</option>
+      <option value="Mama T’s Kitchen">Mama T’s Kitchen</option>
+      <option value="The Jollof Pot">The Jollof Pot</option>
+      <option value="Taraba Global Table">Taraba Global Table</option>
+    </select>
+
+    <label for="food-cuisine">Cuisine</label>
+    <input id="food-cuisine" placeholder="Example: Nigerian">
+
+    <label for="food-category">Category</label>
+    <input
+      id="food-category"
+      placeholder="Example: Rice"
+      required
+    >
+
+    <label for="food-image">Image path</label>
+    <input
+      id="food-image"
+      placeholder="Example: image/Jollof Rice.jpg"
+    >
+
+    <label class="checkbox-label">
+      <input id="food-featured" type="checkbox">
+      Show on homepage
+    </label>
+
+    <button type="submit" id="save-food">Add food</button>
+    <button type="button" id="cancel-edit" hidden>Cancel edit</button>
+  </form>
+
+  <hr>
+
+  <h2>Your foods</h2>
+  <p id="food-count"></p>
+
+  <div id="food-list"></div>
+</div>
+
+    <p id="admin-message" role="status"></p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
