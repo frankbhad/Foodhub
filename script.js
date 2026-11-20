@@ -307,7 +307,7 @@ const moreDishes = [
   2800,
   0,
   'Meals',
-  'image/beans with Plantain.jpg'
+  'image/beans pith plantain.jpg'
 ],
      [
   'Abacgha',
@@ -339,7 +339,7 @@ const moreDishes = [
   3600,
   1,
   'Grills',
-  'image/peppered Meat.jpg'
+  'image/peppered meat.jpg'
 ],
      [
   'Grilled fish',
@@ -466,14 +466,6 @@ const moreDishes = [
   'image/Fried Chicken.jpg'
 ],
   ['Noodles', 'Seasoned noodles with vegetables.', 3500, 2, 'Asian'],
-     [
-  'Noodles',
-  'Seasoned noodles with vegetables.',
-  3499,
-  1,
-  'Asian',
-  'image/Noodles.jpg'
-],
      [
   'Stir-fried rice',
   'Rice stir-fried with vegetables.',
