@@ -2,12 +2,14 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 20px;
+  padding: 30px 20px;
   font-family: Arial, sans-serif;
   background: #f5f5f5;
   color: #222;
@@ -15,7 +17,8 @@ body {
 
 .admin-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 700px;
+  margin: 0 auto;
   padding: 30px;
   background: white;
   border-radius: 16px;
@@ -32,12 +35,34 @@ label {
   font-weight: bold;
 }
 
-input {
+input,
+select {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
+  background: white;
+}
+
+input[type="file"] {
+  padding: 10px;
+}
+
+small {
+  display: block;
+  margin-top: 7px;
+  color: #666;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-label input {
+  width: auto;
 }
 
 button {
@@ -57,30 +82,18 @@ button:hover {
   background: #c94a1c;
 }
 
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#cancel-edit {
+  background: #666;
+}
+
 #admin-message {
-  color: #b42318;
-}
-.admin-card {
-  max-width: 700px;
-}
-
-select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  background: white;
-}
-
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.checkbox-label input {
-  width: auto;
+  color: #a32b16;
+  font-weight: bold;
 }
 
 hr {
@@ -117,4 +130,10 @@ hr {
 
 .delete-button:hover {
   background: #8f1c13;
+}
+
+@media (max-width: 480px) {
+  .admin-card {
+    padding: 22px;
+  }
 }

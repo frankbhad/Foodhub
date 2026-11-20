@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Admin Login | TARABAEat</title>
+  <title>Admin Dashboard | TARABAEat</title>
 
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
   <main class="admin-card">
+
     <h1>TARABAEat Admin</h1>
 
+    <p id="admin-message" role="status"></p>
+
+    <!-- Login section -->
     <div id="login-section">
       <p>Sign in to manage your food menu.</p>
 
@@ -37,77 +41,105 @@
       </form>
     </div>
 
-   <div id="signed-in-section" hidden>
-  <p id="signed-in-message"></p>
+    <!-- Dashboard section -->
+    <div id="signed-in-section" hidden>
+      <p id="signed-in-message"></p>
 
-  <button id="sign-out" type="button">Sign out</button>
+      <button id="sign-out" type="button">Sign out</button>
 
-  <hr>
+      <hr>
 
-  <h2 id="form-title">Add food</h2>
+      <h2 id="form-title">Add food</h2>
 
-  <form id="food-form">
-    <label for="food-name">Food name</label>
-    <input id="food-name" required>
+      <form id="food-form">
 
-    <label for="food-description">Description</label>
-    <input id="food-description">
+        <label for="food-name">Food name</label>
+        <input id="food-name" required>
 
-    <label for="food-price">Price in naira</label>
-    <input
-      id="food-price"
-      type="number"
-      min="0"
-      max="2147483647"
-      step="1"
-      required
-    >
+        <label for="food-description">Description</label>
+        <input id="food-description">
 
-    <label for="food-restaurant">Restaurant</label>
-    <select id="food-restaurant" required>
-      <option value="">Choose a restaurant</option>
-      <option value="Mama T’s Kitchen">Mama T’s Kitchen</option>
-      <option value="The Jollof Pot">The Jollof Pot</option>
-      <option value="Taraba Global Table">Taraba Global Table</option>
-    </select>
+        <label for="food-price">Price in naira</label>
+        <input
+          id="food-price"
+          type="number"
+          min="0"
+          max="2147483647"
+          step="1"
+          required
+        >
 
-    <label for="food-cuisine">Cuisine</label>
-    <input id="food-cuisine" placeholder="Example: Nigerian">
+        <label for="food-restaurant">Restaurant</label>
+        <select id="food-restaurant" required>
+          <option value="">Choose a restaurant</option>
+          <option value="Mama T’s Kitchen">Mama T’s Kitchen</option>
+          <option value="The Jollof Pot">The Jollof Pot</option>
+          <option value="Taraba Global Table">Taraba Global Table</option>
+        </select>
 
-    <label for="food-category">Category</label>
-    <input
-      id="food-category"
-      placeholder="Example: Rice"
-      required
-    >
+        <label for="food-cuisine">Cuisine</label>
+        <input
+          id="food-cuisine"
+          placeholder="Example: Nigerian"
+        >
 
-    <label for="food-image">Image path</label>
-    <input
-      id="food-image"
-      placeholder="Example: image/Jollof Rice.jpg"
-    >
+        <label for="food-category">Category</label>
+        <input
+          id="food-category"
+          placeholder="Example: Rice"
+          required
+        >
 
-    <label class="checkbox-label">
-      <input id="food-featured" type="checkbox">
-      Show on homepage
-    </label>
+        <label for="food-image">Existing image path or URL</label>
+        <input
+          id="food-image"
+          placeholder="Example: image/Jollof Rice.jpg"
+        >
 
-    <button type="submit" id="save-food">Add food</button>
-    <button type="button" id="cancel-edit" hidden>Cancel edit</button>
-  </form>
+        <label for="food-file">Choose a new image</label>
+        <input
+          id="food-file"
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+        >
 
-  <hr>
+        <small>JPG, PNG, or WebP. Maximum size: 5 MB.</small>
 
-  <h2>Your foods</h2>
-  <p id="food-count"></p>
+        <label class="checkbox-label">
+          <input id="food-featured" type="checkbox">
+          Show on homepage
+        </label>
 
-  <div id="food-list"></div>
-</div>
+        <button type="submit" id="save-food">
+          Add food
+        </button>
 
-    <p id="admin-message" role="status"></p>
+        <button type="button" id="cancel-edit" hidden>
+          Cancel edit
+        </button>
+
+      </form>
+
+      <hr>
+
+      <h2>Your foods</h2>
+
+      <label for="admin-search">Search foods</label>
+      <input
+        id="admin-search"
+        type="search"
+        placeholder="Search by food, restaurant or category"
+      >
+
+      <p id="food-count"></p>
+
+      <div id="food-list"></div>
+    </div>
+
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="admin.js"></script>
+
 </body>
 </html>
