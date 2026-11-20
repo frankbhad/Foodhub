@@ -432,14 +432,16 @@ const moreDishes = [
   'image/Lasagna.jpg'
 ],
 
-   [
+[
   'Risotto',
-  'Creamy Italian-stlye rice.',
+  'Creamy Italian-style rice.',
   5600,
   2,
   'Italian',
   'image/Risotto.jpg'
-     [
+],
+
+[
   'French Fries',
   'Golden fried potato chips.',
   4500,
